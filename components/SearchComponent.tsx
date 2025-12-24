@@ -178,7 +178,7 @@ export default function SearchComponent() {
               ) : (
                 <div className="p-8 text-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
                   <p className="text-gray-600 dark:text-gray-400">
-                    No results found for "{query}". Try different keywords.
+                    No results found for &quot;{query}&quot;. Try different keywords.
                   </p>
                 </div>
               )}

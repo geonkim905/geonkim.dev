@@ -60,7 +60,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        {post.content ? (
+        {post.content.trim() ? (
           <MarkdownContent content={post.content} />
         ) : (
           <div className="prose prose-lg dark:prose-invert max-w-none">

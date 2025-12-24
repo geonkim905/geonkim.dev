@@ -32,14 +32,14 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Education</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm currently a student at the <strong>University of Michigan Ann Arbor</strong>, 
-              where I'm pursuing a Bachelor's degree in <strong>Computer Science</strong> with 
+              I&apos;m currently a student at the <strong>University of Michigan Ann Arbor</strong>, 
+              where I&apos;m pursuing a Bachelor&apos;s degree in <strong>Computer Science</strong> with 
               a minor in <strong>Statistics</strong>. My coursework has given me a strong foundation 
               in software engineering, algorithms, data structures, and statistical analysis.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Through my studies, I've developed a deep passion for systems programming, distributed 
-              systems, and building efficient, scalable applications. I'm particularly interested in 
+              Through my studies, I&apos;ve developed a deep passion for systems programming, distributed 
+              systems, and building efficient, scalable applications. I&apos;m particularly interested in 
               how low-level system design principles can be applied to solve complex problems at scale.
             </p>
           </div>
@@ -52,11 +52,11 @@ export default function AboutPage() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               My journey in computer science started with a curiosity about how software works 
               under the hood. This led me to explore everything from web development to operating 
-              systems, and I've found that I'm most excited by projects that combine theory with 
+              systems, and I&apos;ve found that I&apos;m most excited by projects that combine theory with 
               practical implementation.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, I enjoy [your hobbies here - e.g., reading technical books, 
+              When I&apos;m not coding, I enjoy [your hobbies here - e.g., reading technical books, 
               contributing to open source projects, playing chess, hiking, etc.]. I also love 
               diving deep into C++ literature and experimenting with new programming paradigms 
               and design patterns.
@@ -119,11 +119,11 @@ export default function AboutPage() {
               a healthy work-life balance:
             </p>
             <ul className="text-gray-700 dark:text-gray-300 space-y-2 list-disc list-inside">
-              <li><strong>Reading Technical Books:</strong> I'm always reading about new technologies, 
+              <li><strong>Reading Technical Books:</strong> I&apos;m always reading about new technologies, 
               programming paradigms, and system design principles. Some of my favorite topics include 
               distributed systems, operating systems, and software architecture.</li>
               <li><strong>Open Source Contributions:</strong> I enjoy contributing to open source 
-              projects and learning from the community. It's a great way to improve my skills while 
+              projects and learning from the community. It&apos;s a great way to improve my skills while 
               giving back.</li>
               <li><strong>Problem Solving:</strong> I love tackling challenging problems, whether 
               they're algorithmic puzzles, system design challenges, or real-world software issues.</li>
@@ -138,13 +138,13 @@ export default function AboutPage() {
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               My goal is to become a skilled systems engineer who can design and build robust, 
-              scalable distributed systems. I'm particularly interested in working on infrastructure 
+              scalable distributed systems. I&apos;m particularly interested in working on infrastructure 
               that powers large-scale applications, where performance, reliability, and efficiency 
               are critical.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm always looking for opportunities to learn and grow, whether through personal 
-              projects, internships, or collaborations. If you're working on something interesting 
+              I&apos;m always looking for opportunities to learn and grow, whether through personal 
+              projects, internships, or collaborations. If you&apos;re working on something interesting 
               or just want to connect, feel free to reach out!
             </p>
           </div>

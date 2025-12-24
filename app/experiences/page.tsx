@@ -10,7 +10,7 @@ export default function ExperiencesPage() {
             Experiences
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            My professional journey and the roles I've held over the years.
+            My professional journey and the roles I&apos;ve held over the years.
           </p>
         </div>
 

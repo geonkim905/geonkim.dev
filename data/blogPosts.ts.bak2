@@ -8,9 +8,13 @@ export interface BlogPost {
   readTime: number
 }
 
-// @ts-ignore - Template literal content
-const blogPost1Content = `
-# Understanding Move Semantics in Modern C++
+export const blogPosts: BlogPost[] = [
+  {
+    id: '1',
+    title: 'Understanding Move Semantics in Modern C++',
+    excerpt: 'A deep dive into move semantics, rvalue references, and how they improve performance in C++ applications.',
+    content: `
+      `# Understanding Move Semantics in Modern C++` +
 
 Move semantics is one of the most important features introduced in C++11, and it's essential for writing efficient modern C++ code.
 
@@ -70,14 +74,7 @@ Use \`std::move\` when you want to explicitly indicate that an object can be mov
 - Works seamlessly with STL containers
 
 Understanding move semantics is crucial for writing efficient C++ code in the modern era.
-    `.trim()
-
-export const blogPosts: BlogPost[] = [
-  {
-    id: '1',
-    title: 'Understanding Move Semantics in Modern C++',
-    excerpt: 'A deep dive into move semantics, rvalue references, and how they improve performance in C++ applications.',
-    content: blogPost1Content,
+    `.trim(),
     date: '2024-01-15',
     tags: ['C++', 'Move Semantics', 'C++11', 'Performance'],
     readTime: 8,

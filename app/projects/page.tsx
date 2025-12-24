@@ -39,7 +39,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            A collection of projects I've worked on, organized by category. Click on any project to view detailed information.
+            A collection of projects I&apos;ve worked on, organized by category. Click on any project to view detailed information.
           </p>
         </div>
 

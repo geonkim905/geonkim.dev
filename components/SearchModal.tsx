@@ -214,7 +214,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             ) : (
               <div className="text-center py-12">
                 <p className="text-gray-600 dark:text-gray-400">
-                  No results found for "{query}". Try different keywords.
+                  No results found for &quot;{query}&quot;. Try different keywords.
                 </p>
               </div>
             )

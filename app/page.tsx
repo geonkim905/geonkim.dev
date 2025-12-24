@@ -8,7 +8,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="text-center space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
-            Hi, I'm Geon Kim
+            Hi, I&apos;m Geon Kim
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Software Developer | C++ Enthusiast | Problem Solver
@@ -19,15 +19,15 @@ export default function Home() {
         <section className="space-y-6">
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-              I'm a student at the <strong>University of Michigan Ann Arbor</strong>, majoring in 
-              <strong> Computer Science</strong> and minoring in <strong>Statistics</strong>. I'm 
+              I&apos;m a student at the <strong>University of Michigan Ann Arbor</strong>, majoring in 
+              <strong> Computer Science</strong> and minoring in <strong>Statistics</strong>. I&apos;m 
               passionate about software development, systems programming, and building efficient, 
               scalable applications.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Welcome to my personal website! Here you can explore my projects, read about my 
               experiences, and learn more about my journey in tech. Feel free to browse around 
-              and don't hesitate to reach out if you'd like to connect.
+              and don&apos;t hesitate to reach out if you&apos;d like to connect.
             </p>
           </div>
           
