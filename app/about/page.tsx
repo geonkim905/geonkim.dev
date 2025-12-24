@@ -126,7 +126,7 @@ export default function AboutPage() {
               projects and learning from the community. It&apos;s a great way to improve my skills while 
               giving back.</li>
               <li><strong>Problem Solving:</strong> I love tackling challenging problems, whether 
-              they're algorithmic puzzles, system design challenges, or real-world software issues.</li>
+              they&apos;re algorithmic puzzles, system design challenges, or real-world software issues.</li>
               <li><strong>[Add more hobbies here]:</strong> [Describe your other hobbies and interests]</li>
             </ul>
           </div>
