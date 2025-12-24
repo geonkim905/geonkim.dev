@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Home - Geon Kim',
   description: 'Personal website and blog showcasing projects, experiences, and C++ learnings',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({

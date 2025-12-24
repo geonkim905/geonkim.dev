@@ -45,27 +45,35 @@ export default function PhotoCarousel({ images, interval = 5000 }: PhotoCarousel
 
   const currentImage = images[currentIndex]
   const isPhoto4 = currentImage.includes('photo4') || currentImage.includes('photo4.PNG')
-  const objectFitClass = isPhoto4 ? 'object-cover' : 'object-contain'
   const imageContainerClass = isPhoto4 
     ? 'relative w-full h-full bg-gray-200 dark:bg-gray-800'
     : 'relative w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center'
-  const imageClass = isPhoto4 
-    ? 'w-full h-full object-cover'
-    : 'max-w-full max-h-full object-contain'
 
   return (
     <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden group">
-      {/* Image */}
+      {/* Images with smooth fade transition */}
       <div className={imageContainerClass}>
-        <img
-          src={currentImage}
-          alt={`Photo ${currentIndex + 1}`}
-          className={imageClass}
-          onError={(e) => {
-            console.error('Failed to load image:', currentImage)
-            e.currentTarget.style.display = 'none'
-          }}
-        />
+        {images.map((image, index) => {
+          const isCurrentPhoto4 = image.includes('photo4') || image.includes('photo4.PNG')
+          const imageClass = isCurrentPhoto4 
+            ? 'w-full h-full object-cover'
+            : 'max-w-full max-h-full object-contain'
+          
+          return (
+            <img
+              key={index}
+              src={image}
+              alt={`Photo ${index + 1}`}
+              className={`${imageClass} absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+              onError={(e) => {
+                console.error('Failed to load image:', image)
+                e.currentTarget.style.display = 'none'
+              }}
+            />
+          )
+        })}
       </div>
 
       {/* Navigation Arrows */}
