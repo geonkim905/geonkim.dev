@@ -1,8 +1,7 @@
 import PhotoCarousel from '@/components/PhotoCarousel'
 
 export default function AboutPage() {
-  // Add your photos to the public folder and reference them here
-  // Example: if you have photos/photo1.jpg in public folder, use '/photos/photo1.jpg'
+  // Photo paths - images should be in the public folder
   const photos: string[] = [
     '/photo2.JPG',
     '/photo3.JPG',
