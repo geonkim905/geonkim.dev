@@ -3,12 +3,11 @@ import PhotoCarousel from '@/components/PhotoCarousel'
 export default function AboutPage() {
   // Add your photos to the public folder and reference them here
   // Example: if you have photos/photo1.jpg in public folder, use '/photos/photo1.jpg'
-  // For now, using a placeholder. You can add multiple photos for the carousel
-  const photos = [
-    // Add your photo paths here, e.g.:
-    // '/photos/photo1.jpg',
-    // '/photos/photo2.jpg',
-    // '/photos/photo3.jpg',
+  const photos: string[] = [
+    '/photo2.JPG',
+    '/photo3.JPG',
+    '/photo4.PNG',
+    '/photo1.jpg',
   ]
 
   return (
@@ -73,7 +72,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Programming Languages</h3>
               <div className="flex flex-wrap gap-2">
-                {['C++', 'Python', 'JavaScript', 'TypeScript', 'Java', 'C', 'Rust'].map((lang) => (
+                {['C++', 'C', 'Python', 'Go', 'Java', 'JavaScript', 'TypeScript'].map((lang) => (
                   <span
                     key={lang}
                     className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium"
@@ -86,7 +85,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Frameworks & Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'Docker', 'Git', 'Linux'].map((tool) => (
+                {['React', 'Next.js', 'Node.js', 'Express', 'MySQL','PostgreSQL', 'Docker', 'Git', 'Salesforce', 'Linux'].map((tool) => (
                   <span
                     key={tool}
                     className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium"
@@ -99,7 +98,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Areas of Interest</h3>
               <div className="flex flex-wrap gap-2">
-                {['Distributed Systems', 'Operating Systems', 'System Programming', 'Algorithms', 'Data Structures', 'Machine Learning'].map((area) => (
+                {['Distributed Systems', 'Operating Systems', 'Network Architecture', 'System Programming', 'Algorithms', 'Machine Learning'].map((area) => (
                   <span
                     key={area}
                     className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium"

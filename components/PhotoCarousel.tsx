@@ -43,14 +43,28 @@ export default function PhotoCarousel({ images, interval = 5000 }: PhotoCarousel
     )
   }
 
+  const currentImage = images[currentIndex]
+  const isPhoto4 = currentImage.includes('photo4') || currentImage.includes('photo4.PNG')
+  const objectFitClass = isPhoto4 ? 'object-cover' : 'object-contain'
+  const imageContainerClass = isPhoto4 
+    ? 'relative w-full h-full bg-gray-200 dark:bg-gray-800'
+    : 'relative w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center'
+  const imageClass = isPhoto4 
+    ? 'w-full h-full object-cover'
+    : 'max-w-full max-h-full object-contain'
+
   return (
     <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden group">
       {/* Image */}
-      <div className="relative w-full h-full">
+      <div className={imageContainerClass}>
         <img
-          src={images[currentIndex]}
+          src={currentImage}
           alt={`Photo ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
+          className={imageClass}
+          onError={(e) => {
+            console.error('Failed to load image:', currentImage)
+            e.currentTarget.style.display = 'none'
+          }}
         />
       </div>
 

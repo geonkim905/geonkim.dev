@@ -58,20 +58,19 @@ export default function SearchComponent() {
     return data
   }, [])
 
-  // Configure Fuse.js
-  const fuse = useMemo(
-    () =>
-      new Fuse(searchableData, {
-        keys: ['title', 'description'],
-        threshold: 0.3,
-        includeScore: true,
-      }),
-    [searchableData]
-  )
+  // Configure Fuse.js - lazy load to avoid SSR issues
+  const fuse = useMemo(() => {
+    if (typeof window === 'undefined') return null
+    return new Fuse(searchableData, {
+      keys: ['title', 'description'],
+      threshold: 0.3,
+      includeScore: true,
+    })
+  }, [searchableData])
 
   // Perform search
   const results = useMemo(() => {
-    if (!query.trim()) return []
+    if (!query.trim() || !fuse) return []
     const searchResults = fuse.search(query)
     return searchResults.map((result) => ({
       ...result.item,
