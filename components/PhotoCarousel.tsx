@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface PhotoCarouselProps {
@@ -10,27 +10,46 @@ interface PhotoCarouselProps {
 
 export default function PhotoCarousel({ images, interval = 5000 }: PhotoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const [timerKey, setTimerKey] = useState(0) // Key to force timer reset
 
-  useEffect(() => {
+  const startTimer = () => {
     if (images.length <= 1) return
+    
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearInterval(timerRef.current)
+    }
 
-    const timer = setInterval(() => {
+    // Start new timer
+    timerRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
     }, interval)
+  }
 
-    return () => clearInterval(timer)
-  }, [images.length, interval])
+  useEffect(() => {
+    startTimer()
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images.length, interval, timerKey])
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+    setTimerKey((prev) => prev + 1) // Reset timer by changing key
   }
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    setTimerKey((prev) => prev + 1) // Reset timer by changing key
   }
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
+    setTimerKey((prev) => prev + 1) // Reset timer when clicking dots
   }
 
   if (images.length === 0) {
@@ -43,28 +62,19 @@ export default function PhotoCarousel({ images, interval = 5000 }: PhotoCarousel
     )
   }
 
-  const currentImage = images[currentIndex]
-  const isPhoto4 = currentImage.includes('photo4') || currentImage.includes('photo4.PNG')
-  const imageContainerClass = isPhoto4 
-    ? 'relative w-full h-full bg-gray-200 dark:bg-gray-800'
-    : 'relative w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center'
-
   return (
-    <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden group">
+    <div className="relative w-full max-w-2xl mx-auto h-96 md:h-[500px] rounded-lg overflow-hidden group">
       {/* Images with smooth fade transition */}
-      <div className={imageContainerClass}>
+      <div className="relative w-full h-full bg-transparent">
         {images.map((image, index) => {
           const isCurrentPhoto4 = image.includes('photo4') || image.includes('photo4.PNG')
-          const imageClass = isCurrentPhoto4 
-            ? 'w-full h-full object-cover'
-            : 'max-w-full max-h-full object-contain'
           
           return (
             <img
               key={index}
               src={image}
               alt={`Photo ${index + 1}`}
-              className={`${imageClass} absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
                 index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
               onError={(e) => {
@@ -81,14 +91,14 @@ export default function PhotoCarousel({ images, interval = 5000 }: PhotoCarousel
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-20"
             aria-label="Previous photo"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all z-20"
             aria-label="Next photo"
           >
             <ChevronRight className="h-6 w-6" />
